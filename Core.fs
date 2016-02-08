@@ -10,3 +10,18 @@ let (|Regex|_|) pattern input =
 let (|Match|_|) string input =
     if string = input then Some()
     else None
+
+open System.IO
+
+let Lines = File.ReadLines
+
+let Term str =
+    match str with
+    | Match "<start>" -> Some([|"<start>"|])
+    | Match "<end>" -> Some([|"<end>"|])
+    | Regex "(\\w+)/(\\w+)" [a; b] -> Some([|a; b|])
+    | _ -> None
+
+let Parse sentence =
+    Regex.Split(sentence, "\\s+")
+    |> Seq.choose Term
