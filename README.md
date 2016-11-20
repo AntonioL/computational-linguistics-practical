@@ -1,6 +1,8 @@
 "# computational-linguistics" 
 
-This an implementation of a HMM tagger for the common part-of-speech tagging task in NLP.
+This an implementation of a POS tagger using HMM model.
+
+POS Tagging is the backbone of many NLP applications.
 
 It achieves great accuracy on the Penn-TreeBank corpora.
 
